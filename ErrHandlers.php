@@ -17,10 +17,10 @@ class ErrHandlers {
 				}
 			} else ErrHandlers::rethrow($argv[0]);
 		}
-		set_error_handler(function ($errno, $errstr, $errfile, $errline){
+		set_error_handler(function ($errno, $errstr, $errfile, $errline, $context){
 			# call any function or methods added to static class before init()
 			if (!empty(ErrHandlers::$callbacks)) {
-				$args = array( $errno, $errstr, $errfile, $errline );
+				$args = array( $errno, $errstr, $errfile, $errline, $context );
 				foreach (ErrHandlers::$callbacks as $funcname_or_classmethod_arr) {
 					if (call_user_func_array($funcname_or_classmethod_arr, $args))
 						return true;

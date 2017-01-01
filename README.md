@@ -64,7 +64,7 @@ __NOTE: ErrHandlers::init() MUST ALWAYS BE CALLED AND IT MUST BE CALLED LAST__ o
 
 # Custom Handlers with ErrHandlers::$callbacks=[]
 
-We've been handling the action to be performed within `ErrHandlers` but you can also provide one or many callbacks which will be executed in succession whenever an error is thrown. If your callback returns something which evaluates to `true`, the rest of the handler is bypassed (returned from with `true`). You can evaluate whether or not you'd like to handle the error by evaluating any of the arguments sent to the callback which are `($errno, $errstr, $errfile, $errline)` but you can call them whatever you like. Example:  
+We've been handling the action to be performed within `ErrHandlers` but you can also provide one or many callbacks which will be executed in succession whenever an error is thrown. If your callback returns something which evaluates to `true`, the rest of the handler is bypassed (returned from with `true`). You can evaluate whether or not you'd like to handle the error by evaluating any of the arguments sent to the callback which are `($errno, $errstr, $errfile, $errline, $errcontext)` but you can call them whatever you like. Example:  
 
 ```php
 function my_cb($errno, $errstr, $errfile, $errline) {
