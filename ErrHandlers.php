@@ -26,8 +26,7 @@ class ErrHandlers {
 						return true;
 				}
 			}
-			# ErrHandlers::$rethrow is private but for some bizarre reason
-			# is actually available inside this callback. ¯\_(ツ)_/¯
+			# ErrHandlers::$rethrow is private but available inside this callback.
 			if (isset(ErrHandlers::$rethrow['errno'][$errno])
 			 || isset(ErrHandlers::$rethrow['errstr'][$errstr]) ) {
 				if (false!== $c=ErrHandlers::constName($errno)) $errstr = "$c: $errstr";
