@@ -108,39 +108,3 @@ class ErrHandlers {
 		return $constname;
 	}
 }
-
-// // ErrHandlers::rethrow("Object of class stdClass could not be converted to string");
-// function obstrerr($errno, $errstr, $errfile, $errline) {
-// 	if ($errstr==="Object of class stdClass could not be converted to string")
-// 		echo $errno."\n";
-// 		// throw new ErrorException($errstr, $errno, 0, $errfile, $errline);
-// }
-// ErrHandlers::$callbacks[] = 'obstrerr';
-
-// echo ErrHandlers::constName(4096);
-
-ErrHandlers::init(E_RECOVERABLE_ERROR);
-
-
-
-
-
-// var_dump(ErrHandlers::rethrow());
-
-
-
-try {
-	echo new stdClass;
-}
-catch (Exception $err){
-	echo $err->getMessage(), PHP_EOL;
-}
-
-
-
-// $arr = get_defined_constants(true);
-
-// // var_dump(array_keys($arr));
-// var_dump($arr['Core']);
-
-// output is "MY_CONSTANT"
