@@ -1,3 +1,6 @@
+
+/test/[0-9].php
+
 ### MacOS ignores ###
 
 *.DS_Store
